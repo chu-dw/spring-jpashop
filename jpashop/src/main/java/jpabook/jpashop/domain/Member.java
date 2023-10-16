@@ -20,7 +20,10 @@ public class Member {
     @Embedded
     private Address address;
 
-    @OneToMany(mappedBy = "member")  //오더 테이블의 멤버에 의해 매핑된 거울
+    @OneToMany(mappedBy = "member")  //오더 테이블의 멤버에 의해 매핑된 거연
     private List<Order> orders = new ArrayList<>();
+
+
+
 
 }
