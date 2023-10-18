@@ -25,6 +25,9 @@ public class OrderItem {
     private int orderPrice;
     private int count;
 
+    protected OrderItem(){  //서비스에서 set바로 못쓰게 셍성메서드 통해서만
+    }
+
     //==생성메서드==/
     public static OrderItem createOrderItem(Item item, int orderPrice, int count){
         OrderItem orderItem = new OrderItem();

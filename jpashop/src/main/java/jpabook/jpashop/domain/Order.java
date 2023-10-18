@@ -50,7 +50,9 @@ public class Order {
         delivery.setOrder(this);
     }
 
-    //==새성 메서드==//  복잡한 생성은 별도의 생성 메서드 있으면 좋음
+
+
+    //==생성 메서드==//  복잡한 생성은 별도의 생성 메서드 있으면 좋음
     public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems){
         Order order = new Order();
         order.setMember(member);
