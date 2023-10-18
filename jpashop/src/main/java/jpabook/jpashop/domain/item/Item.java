@@ -29,11 +29,12 @@ public abstract class Item {
 
     //==비지니스 로직=// Setter로 변경x 이 메서드들 사용
     public void addStock(int quantity){
+
         this.stockQuantity += quantity;
     }
 
     public void removeStock(int quantity){
-        int restStock = this.stockQuantity = quantity;
+        int restStock = this.stockQuantity - quantity;
         if (restStock < 0){
             throw new NotEnoughStockException("need more stock");
         }

@@ -25,6 +25,19 @@ public class OrderItem {
     private int orderPrice;
     private int count;
 
+    protected OrderItem(){  //서비스에서 set바로 못쓰게 셍성메서드 통해서만
+    }
+
+    //==생성메서드==/
+    public static OrderItem createOrderItem(Item item, int orderPrice, int count){
+        OrderItem orderItem = new OrderItem();
+        orderItem.setItem(item);
+        orderItem.setOrderPrice(orderPrice);
+        orderItem.setCount(count);
+
+        item.removeStock(count); //주문한 만큼 item 쩨고 내려줌
+        return orderItem;
+    }
 
     //==비지니스 로직==//
     public void cancel(){   //취소된 제고 수량을 원삭복구
